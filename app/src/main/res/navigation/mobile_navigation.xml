@@ -31,4 +31,9 @@
             android:id="@+id/action_userFragment_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
+    <fragment
+        android:id="@+id/pedidoFragment"
+        android:name="com.example.gasapp.PedidoFragment"
+        android:label="fragment_pedido"
+        tools:layout="@layout/fragment_pedido" />
 </navigation>
