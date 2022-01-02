@@ -33,6 +33,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class UserFragment extends Fragment {
+    private TextInputEditText nome, endereco,dataNasc;
+    private TextInputLayout nomeLayout, enderecoLayout, dataNascLayout;
     private Button btnCadastrar;
     View root;
     @Nullable
@@ -40,6 +42,10 @@ public class UserFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_user, container, false);
+        nome = root.findViewById(R.id.txtNome);
+        endereco =  root.findViewById((R.id.txtEnd));
+        nomeLayout = root.findViewById(R.id.layoutNome);
+        enderecoLayout =  root.findViewById((R.id.layoutEndereco));
         btnCadastrar = root.findViewById(R.id.btnCadastrar);
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,23 +56,46 @@ public class UserFragment extends Fragment {
         return root;
     }
     public void cadPessoa(View view){
-        String nome = ((EditText)root.findViewById(R.id.txtNome)).getText().toString();
-        String endereco = ((EditText)root.findViewById(R.id.txtEnd)).getText().toString();
+        if(validarCampos()){
+            String nome = ((EditText)root.findViewById(R.id.txtNome)).getText().toString();
+            String endereco = ((EditText)root.findViewById(R.id.txtEnd)).getText().toString();
 
-        Pessoa pessoa = new Pessoa(nome, endereco);
-        DatabaseReference pessoas = FirebaseDatabase.getInstance().getReference().child("pessoas");
-        pessoas.push().setValue(pessoa).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Navigation.findNavController(view).navigate(R.id.action_userFragment_to_nav_home);
-            }
-        })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Snackbar.make(view, "Erro ao cadastrar pessoa!", Snackbar.LENGTH_LONG)
-                                .setTextColor(Color.RED).show();
-                    }
-                });
+            Pessoa pessoa = new Pessoa(nome, endereco);
+            DatabaseReference pessoas = FirebaseDatabase.getInstance().getReference().child("pessoas");
+            pessoas.push().setValue(pessoa).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Snackbar.make(view, "Cadastrado com sucesso", Snackbar.LENGTH_LONG).show();
+                    Navigation.findNavController(view).navigate(R.id.action_userFragment_to_nav_home);
+                }
+            })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Snackbar.make(view, "Erro ao cadastrar pessoa!", Snackbar.LENGTH_LONG)
+                                    .setTextColor(Color.RED).show();
+                        }
+                    });
+        }
+
+    }
+    private boolean validarCampos(){
+        if(nome.getText().toString().isEmpty()){
+            nomeLayout.setErrorEnabled(true);
+            nomeLayout.setError("Informe o seu nome");
+            return false;
+        }else{
+            nomeLayout.setErrorEnabled(false);
+        }
+
+        if(endereco.getText().toString().isEmpty()){
+            enderecoLayout.setErrorEnabled(true);
+            enderecoLayout.setError("Informe o seu endereço");
+            return false;
+        }else{
+            enderecoLayout.setErrorEnabled(false);
+        }
+
+        return true;
     }
 }
