@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "740605968157",
+    "project_id": "gasappexample",
+    "storage_bucket": "gasappexample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740605968157:android:ab965f4c7854fa1ebbebf4",
+        "android_client_info": {
+          "package_name": "com.example.gasapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740605968157-drmv5714tnh0c6ogv15db6i5tpcuvhae.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gasapp",
+            "certificate_hash": "792e42275b42548f046c5683c161ac50a4aecf45"
+          }
+        },
+        {
+          "client_id": "740605968157-r9u9g0d1iassb2l14de2s04uk66o0i8o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV61WwzSOUr7oiIwztdFw3eTToHjE-xI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740605968157-r9u9g0d1iassb2l14de2s04uk66o0i8o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
