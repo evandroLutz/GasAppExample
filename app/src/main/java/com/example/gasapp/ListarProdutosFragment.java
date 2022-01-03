@@ -104,7 +104,6 @@ public class ListarProdutosFragment extends Fragment {
                 Pedido pedido = new Pedido(produto,qtd, produtoTotalPreco);
                 totalQtd += produtoTotalPreco;
                 listaPedidos.add(pedido);
-                Snackbar.make(root, "fechando pedido - "+ "produto: " + produto + " qtd: " + qtd, Snackbar.LENGTH_LONG).show();
             }
         }
         if(!listaPedidos.isEmpty()){
@@ -121,6 +120,7 @@ public class ListarProdutosFragment extends Fragment {
                         Pessoa pessoa = dataSnapshot.getValue(Pessoa.class);
                         PedidoTotal pedidoTotal = new PedidoTotal(listaPedidos, finalTotalQtd, pessoa);
                         savePedidoBD(pedidoTotal);
+                        Snackbar.make(root, "fechando pedido - " + pedidoTotal, Snackbar.LENGTH_LONG).show();
 
                     }
                 }
