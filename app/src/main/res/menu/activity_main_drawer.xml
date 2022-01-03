@@ -13,7 +13,7 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Cadastrar usuário" />
         <item
-            android:id="@+id/pedidoFragment"
+            android:id="@+id/listarProdutosFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Fazer pedido" />
 

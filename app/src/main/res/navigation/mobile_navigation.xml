@@ -36,4 +36,9 @@
         android:name="com.example.gasapp.PedidoFragment"
         android:label="fragment_pedido"
         tools:layout="@layout/fragment_pedido" />
+    <fragment
+        android:id="@+id/listarProdutosFragment"
+        android:name="com.example.gasapp.ListarProdutosFragment"
+        android:label="fragment_listar_produtos"
+        tools:layout="@layout/fragment_listar_produtos" />
 </navigation>

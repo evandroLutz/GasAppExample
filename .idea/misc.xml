@@ -4,12 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/adapter_card_icones.xml" value="0.42872687704026113" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/app_bar_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/content_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_cadastrar.xml" value="0.2617753623188406" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_cadastrarUser.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_gallery.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_home.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_listar_produtos.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_login.xml" value="0.2617753623188406" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_pedido.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/fragment_slideshow.xml" value="0.17831813576494426" />

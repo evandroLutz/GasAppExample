@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="-10dp"
+            android:layout_marginEnd="24dp"
+            app:srcCompat="@drawable/botijao" />
+
+        <TextView
+            android:id="@+id/nomeProduto"
+            android:layout_width="211dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/imageView3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="33dp"
+            android:text="TextView"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/qtd"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nomeProduto"
+            android:layout_alignEnd="@+id/imageView3"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="209dp"
+            android:layout_marginEnd="147dp"
+            android:text="TextView"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/adicionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="235dp"
+            android:layout_marginTop="298dp"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/remover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="298dp"
+            android:text="-" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
