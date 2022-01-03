@@ -3,6 +3,7 @@ package com.example.gasapp.model;
 public class Produto {
     private String id;
     private String nome;
+    private Double preco;
 
 
     public Produto(){}
@@ -19,7 +20,9 @@ public class Produto {
     }
 
 
+    public Double getPreco() {   return preco;   }
 
+    public void setPreco(Double preco) {    this.preco = preco; }
 
 
     public String getId() {   return id;   }

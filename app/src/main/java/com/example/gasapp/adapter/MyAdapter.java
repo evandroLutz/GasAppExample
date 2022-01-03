@@ -45,6 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             final int[] qtdNumber = {0};
             Produto p = listaProdutos.get(position);
             myViewHolder.nome.setText(p.getNome());
+            myViewHolder.preco.setText(String.valueOf(p.getPreco()));
 
             Bundle bundle = new Bundle();
             bundle.putString("id", String.valueOf(listaProdutos.get(position).getId()));
@@ -73,14 +74,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public class MyViewHolder extends RecyclerView.ViewHolder{
             TextView id;
             TextView nome;
+            TextView preco;
             Button adicionar;
             Button remover;
             TextView qtd;
-            Integer qtdNumber = 0;
 
             public MyViewHolder(View itemView){
                 super(itemView);
                 nome = itemView.findViewById(R.id.nomeProduto);
+                preco = itemView.findViewById(R.id.precoProduto);
                 adicionar = itemView.findViewById(R.id.adicionar);
                 remover = itemView.findViewById(R.id.remover);
                 qtd = itemView.findViewById(R.id.qtd);

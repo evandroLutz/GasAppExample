@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.example.gasapp.adapter.MyAdapter;
 import com.example.gasapp.model.Pedido;
+import com.example.gasapp.model.PedidoTotal;
 import com.example.gasapp.model.Produto;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -88,22 +89,33 @@ public class ListarProdutosFragment extends Fragment {
 
     private  void fecharPedido(){
         View child;
+        double totalQtd = 0;
+        listaPedidos.clear();
         for (int i = 0; i < recyclerView.getChildCount(); i++) {
             child = recyclerView.getChildAt(i);
             String qtd = ((TextView)child.findViewById(R.id.qtd)).getText().toString();
             int qtdNumber = Integer.parseInt(qtd);
             if(qtdNumber > 0){
                 String produto = ((TextView)child.findViewById(R.id.nomeProduto)).getText().toString();
-                Pedido pedido = new Pedido(produto,qtd);
-                savePedidoBD(pedido);
+                Double produtoPreco  = Double.parseDouble(((TextView)child.findViewById(R.id.precoProduto)).getText().toString());
+                Integer produtoQtd = Integer.parseInt(qtd);
+                Double produtoTotalPreco = produtoPreco * produtoQtd;
+                Pedido pedido = new Pedido(produto,qtd, produtoTotalPreco);
+                totalQtd += produtoTotalPreco;
+                listaPedidos.add(pedido);
                 Snackbar.make(root, "fechando pedido - "+ "produto: " + produto + " qtd: " + qtd, Snackbar.LENGTH_LONG).show();
             }
         }
+        if(!listaPedidos.isEmpty()){
+            PedidoTotal pedidoTotal = new PedidoTotal(listaPedidos, totalQtd);
+            savePedidoBD(pedidoTotal);
+        }
+
     }
 
-    private  void savePedidoBD(Pedido pedido){
-        DatabaseReference pedidos = FirebaseDatabase.getInstance().getReference().child("pedidos");
-        pedidos.push().setValue(pedido).addOnSuccessListener(new OnSuccessListener<Void>() {
+    private  void savePedidoBD(PedidoTotal pedidoTotal){
+        DatabaseReference pedidos = FirebaseDatabase.getInstance().getReference().child("pedidosCompletos");
+        pedidos.push().setValue(pedidoTotal).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Snackbar.make(root, "Cadastrado com sucesso", Snackbar.LENGTH_LONG).show();
@@ -112,7 +124,7 @@ public class ListarProdutosFragment extends Fragment {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Snackbar.make(root, "Erro ao cadastrar pessoa!", Snackbar.LENGTH_LONG)
+                        Snackbar.make(root, "Erro ao cadastrar pedido!", Snackbar.LENGTH_LONG)
                                 .setTextColor(Color.RED).show();
                     }
                 });
