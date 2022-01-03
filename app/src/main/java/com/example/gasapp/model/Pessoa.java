@@ -1,7 +1,6 @@
 package com.example.gasapp.model;
 
 public class Pessoa {
-    private String id;
     private String nome;
     private String endereco;
 
@@ -29,10 +28,6 @@ public class Pessoa {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-
-    public String getId() {   return id;   }
-
-    public void setId(String id) {    this.id = id; }
 
     @Override
     public String toString() {

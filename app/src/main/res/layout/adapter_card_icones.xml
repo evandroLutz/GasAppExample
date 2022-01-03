@@ -81,11 +81,6 @@
             android:layout_marginTop="298dp"
             android:text="-" />
 
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

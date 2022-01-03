@@ -61,8 +61,8 @@ public class UserFragment extends Fragment {
             String endereco = ((EditText)root.findViewById(R.id.txtEnd)).getText().toString();
 
             Pessoa pessoa = new Pessoa(nome, endereco);
-            DatabaseReference pessoas = FirebaseDatabase.getInstance().getReference().child("pessoas");
-            pessoas.push().setValue(pessoa).addOnSuccessListener(new OnSuccessListener<Void>() {
+            DatabaseReference pessoas = FirebaseDatabase.getInstance().getReference().child("pessoa");
+            pessoas.setValue(pessoa).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Snackbar.make(view, "Cadastrado com sucesso", Snackbar.LENGTH_LONG).show();
@@ -72,7 +72,7 @@ public class UserFragment extends Fragment {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Snackbar.make(view, "Erro ao cadastrar pessoa!", Snackbar.LENGTH_LONG)
+                            Snackbar.make(view, "Erro ao cadastrar usuario!", Snackbar.LENGTH_LONG)
                                     .setTextColor(Color.RED).show();
                         }
                     });

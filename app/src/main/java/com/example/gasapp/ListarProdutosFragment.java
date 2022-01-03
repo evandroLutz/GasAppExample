@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.example.gasapp.adapter.MyAdapter;
 import com.example.gasapp.model.Pedido;
 import com.example.gasapp.model.PedidoTotal;
+import com.example.gasapp.model.Pessoa;
 import com.example.gasapp.model.Produto;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -107,8 +108,28 @@ public class ListarProdutosFragment extends Fragment {
             }
         }
         if(!listaPedidos.isEmpty()){
-            PedidoTotal pedidoTotal = new PedidoTotal(listaPedidos, totalQtd);
-            savePedidoBD(pedidoTotal);
+            DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+            DatabaseReference userNameRef = rootRef.child("pessoa");
+            double finalTotalQtd = totalQtd;
+            ValueEventListener eventListener = new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(!dataSnapshot.exists()) {
+                        Snackbar.make(root, "Não existe um endereco cadastrado, cadastre um antes", Snackbar.LENGTH_LONG).show();
+                    } else {
+
+                        Pessoa pessoa = dataSnapshot.getValue(Pessoa.class);
+                        PedidoTotal pedidoTotal = new PedidoTotal(listaPedidos, finalTotalQtd, pessoa);
+                        savePedidoBD(pedidoTotal);
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {}
+            };
+            userNameRef.addListenerForSingleValueEvent(eventListener);
+
         }
 
     }

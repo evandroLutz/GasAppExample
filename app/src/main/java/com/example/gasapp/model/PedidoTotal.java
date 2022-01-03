@@ -10,7 +10,7 @@ public class PedidoTotal {
 
 
     public PedidoTotal(){}
-    public PedidoTotal(List<Pedido> listaPedidos, Double valorTotal) {
+    public PedidoTotal(List<Pedido> listaPedidos, Double valorTotal, Pessoa pessoa) {
         this.listaPedidos = listaPedidos;
         this.pessoa = pessoa;
         this.valorTotal = valorTotal;
