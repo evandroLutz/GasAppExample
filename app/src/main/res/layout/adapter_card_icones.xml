@@ -37,15 +37,28 @@
 
         <TextView
             android:id="@+id/precoProduto"
-            android:layout_width="137dp"
-            android:layout_height="wrap_content"
+            android:layout_width="103dp"
+            android:layout_height="55dp"
             android:layout_alignEnd="@+id/imageView3"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="233dp"
+            android:layout_marginStart="267dp"
             android:layout_marginTop="47dp"
             android:layout_marginEnd="1dp"
             android:text="TextView"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/precoProduto4"
+            android:layout_width="64dp"
+            android:layout_height="54dp"
+            android:layout_alignEnd="@+id/imageView3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="219dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="88dp"
+            android:text="R$"
             android:textSize="24dp" />
 
         <TextView
@@ -55,9 +68,9 @@
             android:layout_below="@+id/nomeProduto"
             android:layout_alignEnd="@+id/imageView3"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="168dp"
+            android:layout_marginStart="175dp"
             android:layout_marginTop="209dp"
-            android:layout_marginEnd="147dp"
+            android:layout_marginEnd="140dp"
             android:text="TextView"
             android:textSize="20dp" />
 
