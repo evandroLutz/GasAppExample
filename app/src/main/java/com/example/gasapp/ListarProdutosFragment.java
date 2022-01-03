@@ -114,7 +114,7 @@ public class ListarProdutosFragment extends Fragment {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     if(!dataSnapshot.exists()) {
-                        Snackbar.make(root, "Não existe um endereco cadastrado, cadastre um antes", Snackbar.LENGTH_LONG).show();
+                        Snackbar.make(root, "Não existe um endereco cadastrado, cadastre um antes de efetuar o pedido", Snackbar.LENGTH_LONG).show();
                     } else {
 
                         Pessoa pessoa = dataSnapshot.getValue(Pessoa.class);
@@ -130,6 +130,8 @@ public class ListarProdutosFragment extends Fragment {
             };
             userNameRef.addListenerForSingleValueEvent(eventListener);
 
+        } else {
+            Snackbar.make(root, "Nenhum item selecionado", Snackbar.LENGTH_LONG).show();
         }
 
     }
