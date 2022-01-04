@@ -1,4 +1,4 @@
-package com.example.gasapp.ui.home;
+package com.example.gasapp.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

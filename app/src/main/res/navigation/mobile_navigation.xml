@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.gasapp.ui.home.HomeFragment"
+        android:name="com.example.gasapp.fragments.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
@@ -22,17 +22,29 @@
     </fragment>
     <fragment
         android:id="@+id/pedidoFragment"
-        android:name="com.example.gasapp.PedidoFragment"
+        android:name="com.example.gasapp.fragments.PedidoFragment"
         android:label="fragment_pedido"
-        tools:layout="@layout/fragment_pedido" />
+        tools:layout="@layout/fragment_pedido" >
+        <action
+            android:id="@+id/action_pedidoFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
     <fragment
         android:id="@+id/listarProdutosFragment"
-        android:name="com.example.gasapp.ListarProdutosFragment"
+        android:name="com.example.gasapp.fragments.ListarProdutosFragment"
         android:label="produtos"
-        tools:layout="@layout/fragment_listar_produtos" />
+        tools:layout="@layout/fragment_listar_produtos" >
+        <action
+            android:id="@+id/action_listarProdutosFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
     <fragment
         android:id="@+id/listarPedidosFragment"
-        android:name="com.example.gasapp.ListarPedidosFragment"
+        android:name="com.example.gasapp.fragments.ListarPedidosFragment"
         android:label="pedidos efetuados"
-        tools:layout="@layout/fragment_listar_pedidos" />
+        tools:layout="@layout/fragment_listar_pedidos" >
+        <action
+            android:id="@+id/action_listarPedidosFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>

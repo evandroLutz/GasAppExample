@@ -1,4 +1,4 @@
-package com.example.gasapp;
+package com.example.gasapp.fragments;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.gasapp.R;
 import com.example.gasapp.adapter.MyAdapter;
 import com.example.gasapp.adapter.MyAdapterPedidos;
 import com.example.gasapp.model.Pedido;

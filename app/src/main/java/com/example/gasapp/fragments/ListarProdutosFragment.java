@@ -1,10 +1,11 @@
-package com.example.gasapp;
+package com.example.gasapp.fragments;
 
 import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.gasapp.R;
 import com.example.gasapp.adapter.MyAdapter;
 import com.example.gasapp.model.Pedido;
 import com.example.gasapp.model.PedidoTotal;
@@ -138,7 +140,8 @@ public class ListarProdutosFragment extends Fragment {
         pedidos.push().setValue(pedidoTotal).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Snackbar.make(root, "Cadastrado com sucesso", Snackbar.LENGTH_LONG).show();
+                Snackbar.make(root, "O pedido será entregue no endereço cadastrado", Snackbar.LENGTH_LONG).show();
+                Navigation.findNavController(root).navigate(R.id.action_listarProdutosFragment_to_nav_home);
             }
         })
                 .addOnFailureListener(new OnFailureListener() {
