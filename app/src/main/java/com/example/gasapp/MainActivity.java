@@ -1,12 +1,15 @@
 package com.example.gasapp;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -55,5 +58,27 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Desenvolvido por:");
+                builder.setIcon(R.drawable.chama);
+                builder.setMessage("Evandro Lutz Guimarães - PW3")
+                        .setNegativeButton("Fechar", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Snackbar.make(findViewById(R.id.nav_home), "Você fechou a Dialog", Snackbar.LENGTH_LONG).show();
+                            }
+                        });
+                builder.create().show();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 }

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/drawable/side_nav_bar.xml" value="0.28541666666666665" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/adapter_card_icones.xml" value="0.18" />
         <entry key="..\:/Users/vande/AndroidStudioProjects/GasApp/GasAppExample/app/src/main/res/layout/adapter_card_icones_pedidos.xml" value="0.33" />

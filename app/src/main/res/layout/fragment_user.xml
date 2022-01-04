@@ -5,6 +5,7 @@
     android:id="@+id/layoutLogin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/butGreen"
     android:orientation="vertical">
 
 
@@ -47,6 +48,7 @@
         android:id="@+id/btnCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/butYello"
         android:text="@string/btnCadastrar" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
