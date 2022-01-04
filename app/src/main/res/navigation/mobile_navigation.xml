@@ -28,6 +28,11 @@
     <fragment
         android:id="@+id/listarProdutosFragment"
         android:name="com.example.gasapp.ListarProdutosFragment"
-        android:label="fragment_listar_produtos"
+        android:label="produtos"
         tools:layout="@layout/fragment_listar_produtos" />
+    <fragment
+        android:id="@+id/listarPedidosFragment"
+        android:name="com.example.gasapp.ListarPedidosFragment"
+        android:label="pedidos efetuados"
+        tools:layout="@layout/fragment_listar_pedidos" />
 </navigation>

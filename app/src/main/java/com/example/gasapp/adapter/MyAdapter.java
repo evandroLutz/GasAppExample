@@ -1,7 +1,6 @@
 package com.example.gasapp.adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gasapp.model.Produto;
@@ -19,8 +16,6 @@ import com.example.gasapp.model.Produto;
 import java.util.ArrayList;
 import java.util.List;
 import com.example.gasapp.R;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         List<Produto> listaProdutos = new ArrayList<>();

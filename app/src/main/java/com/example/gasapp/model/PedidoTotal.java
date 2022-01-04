@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PedidoTotal {
+    private String id;
     private List<Pedido> listaPedidos = new ArrayList<>();
     private Pessoa pessoa;
     private Double valorTotal;
@@ -20,12 +21,29 @@ public class PedidoTotal {
         return listaPedidos;
     }
 
+    public String getListaPedidosString() {
+
+        String pedidos = "produtos do pedido: \n\n";
+        for(Pedido pedido : listaPedidos){
+            pedidos += "- " + pedido.getProduto() + ", qtd: " + pedido.getQtd() + "\n valor total do produto: " + "\nR$ "+pedido.getValor() + "\n\n";
+        }
+        return pedidos;
+    }
+
     public Pessoa getPessoa() {
         return pessoa;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public Double getValorTotal() {
         return valorTotal;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setListaPedidos(List<Pedido> listaPedidos) {
@@ -39,4 +57,7 @@ public class PedidoTotal {
     public void setValorTotal(Double valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+
+
 }

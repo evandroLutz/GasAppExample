@@ -11,10 +11,14 @@
         <item
             android:id="@+id/userFragment"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Cadastrar usuário" />
+            android:title="Cadastrar/Alterar usuário" />
         <item
             android:id="@+id/listarProdutosFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Fazer pedido" />
+        <item
+            android:id="@+id/listarPedidosFragment"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Listas pedidos" />
     </group>
 </menu>
